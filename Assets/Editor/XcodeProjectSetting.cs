@@ -58,11 +58,6 @@ public class XcodeProjectSetting : IPostprocessBuildWithReport
             PlistElementDict rootDict = plist.root;
             rootDict.SetBoolean("ITSAppUsesNonExemptEncryption", false);
 
-            rootDict.SetString("NSLocationAlwaysUsageDescription", "Some message to appease Apple.");
-            rootDict.SetString("NSLocationWhenInUseUsageDescription", "Some message to appease Apple.");
-
-            rootDict.SetBoolean("FirebaseAppDelegateProxyEnabled", false);
-
 
             //// 插入URL Scheme到Info.plsit（理清结构）
             //var array = plist.root.CreateArray("CFBundleURLTypes");
@@ -78,9 +73,7 @@ public class XcodeProjectSetting : IPostprocessBuildWithReport
             plist.root.SetString("NSCameraUsageDescription", "请允许打开摄像头");  //相机
             plist.root.SetString("NSPhotoLibraryUsageDescription", "App需要您的同意,才能访问相册");  //相机
             plist.root.SetString("NSPhotoLibraryAddUsageDescription", "App需要您的同意,才能访问相册");  //相机
-                                                                                            // 应用修改
-            plist.WriteToFile(plistPath);
-
+            rootDict.SetBoolean("FirebaseAppDelegateProxyEnabled", false);
 
             // 三、 插入代码 ---------------------------------------------------------------------------------------------
             ////读取UnityAppController.mm文件
