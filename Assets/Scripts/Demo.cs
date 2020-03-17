@@ -27,11 +27,6 @@ namespace Tackor.Other
             screenshotBtn.onClick.AddListener(ScreenShotAndSaveToAlbum);
         }
 
-        void TODO()
-        {
-            /// NSPhotoLibraryAddUsageDescription
-        }
-
         /// <summary>
         /// 从相册_照片获取图片
         /// </summary>
